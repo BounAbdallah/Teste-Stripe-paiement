@@ -1,0 +1,331 @@
+/* Variables CSS pour les couleurs */
+:root {
+  --noir: #111111;
+  --blanc: #ffffff;
+  --gris-clair: #f8f9fa;
+  --gris-moyen: #e9ecef;
+  --gris-fonce: #343a40;
+  --border-color: #dee2e6;
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset et styles globaux */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--noir);
+  background-color: var(--gris-clair);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container principal */
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--blanc);
+  min-height: 100vh;
+  box-shadow: var(--shadow-light);
+}
+
+/* Header */
+.App-header {
+  background: var(--noir);
+  color: var(--blanc);
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.App-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.App-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Sections */
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 60px 0 40px;
+  color: var(--noir);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--noir);
+}
+
+/* Container des plats */
+.dish-list-container {
+  padding: 40px;
+  background-color: var(--blanc);
+}
+
+.dish-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+/* Cards des plats */
+.dish-card {
+  background: var(--blanc);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-light);
+}
+
+.dish-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--gris-fonce);
+}
+
+.dish-card.selected {
+  border-color: var(--noir);
+  border-width: 2px;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.dish-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.dish-info {
+  padding: 24px;
+}
+
+.dish-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--noir);
+}
+
+.dish-description {
+  color: var(--gris-fonce);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.dish-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--noir);
+  background-color: var(--gris-clair);
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  border: 1px solid var(--border-color);
+}
+
+/* Résumé du plat sélectionné */
+.selected-dish-summary {
+  margin: 40px;
+  padding: 40px;
+  background-color: var(--blanc);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+}
+
+.selected-dish-summary h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.selected-dish-image {
+  width: 100%;
+  max-width: 400px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 24px auto;
+  display: block;
+  border: 1px solid var(--border-color);
+}
+
+.summary-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--noir);
+  margin: 24px 0;
+}
+
+/* Boutons */
+.proceed-button {
+  background-color: var(--noir);
+  color: var(--blanc);
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 20px;
+}
+
+.proceed-button:hover {
+  background-color: var(--gris-fonce);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+.proceed-button:disabled {
+  background-color: var(--gris-moyen);
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.7;
+}
+
+/* Section de paiement */
+.payment-section {
+  margin: 40px;
+  padding: 40px;
+  background-color: var(--blanc);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
+}
+
+.payment-section h2 {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+#payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#payment-element {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--gris-clair);
+  font-size: 1rem;
+}
+
+#submit {
+  background-color: var(--noir);
+  color: var(--blanc);
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 400px;
+}
+
+#submit:hover:not(:disabled) {
+  background-color: var(--gris-fonce);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+#submit:disabled {
+  background-color: var(--gris-moyen);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+#payment-message {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: var(--gris-clair);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Footer */
+.App-footer {
+  background-color: var(--gris-fonce);
+  color: var(--blanc);
+  text-align: center;
+  padding: 40px;
+  margin-top: 60px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 40px 20px;
+  }
+  
+  .App-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .App-header p {
+    font-size: 1.1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin: 40px 0 30px;
+  }
+  
+  .dish-list-container,
+  .selected-dish-summary,
+  .payment-section {
+    margin: 20px;
+    padding: 24px;
+  }
+  
+  .dish-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .dish-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .summary-price {
+    font-size: 1.8rem;
+  }
+  
+  }
