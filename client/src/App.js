@@ -10,7 +10,7 @@ import YassaPouletImg from './images/Yassa_Poulet.jpg';
 import MafeImg from './images/Mafé.jpg';
 
 
-const stripePromise = loadStripe('pk_test_51Rid6iRptdkkM13Pu4X4LM3PLm0SzOw6noOpkjuSJGWqW25I5tGl7DzoQbcasj5FpSznz9DfQoG7DSPqvocgccrd0099zAef43');
+const stripePromise = loadStripe('pk_test_*******************************************************');
 
 function App() {
   const dishes = [
