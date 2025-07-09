@@ -37,7 +37,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
     ```
 3.  **Configurez votre clé Stripe Publiable :**
     * Ouvrez le fichier `src/App.js`.
-    * Remplacez `'pk_test_51Rid6iRptdkkM13Pu4X4LM3PLm0SzOw6noOpkjuSJGWqW25I5tGl7DzoQbcasj5FpSznz9DfQoG7DSPqvocgccrd0099zAef43'` par votre propre **clé publiable Stripe de test**.
+    * Remplacez `'pk_test_******************************************************'` par votre propre **clé publiable Stripe de test**.
 
 ---
 
