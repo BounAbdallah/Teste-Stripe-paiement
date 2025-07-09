@@ -4,14 +4,12 @@ import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from './CheckoutForm';
 import './App.css'; // Nous allons mettre à jour ce fichier CSS
 
-// Importez vos images ici
+
 import ThieboudienneImg from './images/Thieboudienne.jpg';
 import YassaPouletImg from './images/Yassa_Poulet.jpg';
 import MafeImg from './images/Mafé.jpg';
 
-// Assurez-vous d'appeler loadStripe en dehors du rendu d'un composant pour éviter
-// de recréer l'objet Stripe à chaque rendu.
-// Remplacez par votre clé publiable réelle
+
 const stripePromise = loadStripe('pk_test_51Rid6iRptdkkM13Pu4X4LM3PLm0SzOw6noOpkjuSJGWqW25I5tGl7DzoQbcasj5FpSznz9DfQoG7DSPqvocgccrd0099zAef43');
 
 function App() {
